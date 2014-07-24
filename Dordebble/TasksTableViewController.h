@@ -15,4 +15,5 @@
 
 @property (nonatomic,strong) NSArray* issues;
 
+- (IBAction)refresh:(id)sender;
 @end

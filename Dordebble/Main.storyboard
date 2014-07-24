@@ -97,7 +97,13 @@
                             <outlet property="delegate" destination="VVr-Ux-01P" id="nof-F3-Qty"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tasks" id="Q7G-Oe-FU2"/>
+                    <navigationItem key="navigationItem" title="Tasks" id="Q7G-Oe-FU2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Zkf-nU-P13">
+                            <connections>
+                                <action selector="refresh:" destination="VVr-Ux-01P" id="rfM-pJ-3qG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyG-Ib-onG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

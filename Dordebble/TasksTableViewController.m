@@ -179,4 +179,8 @@
 }
 */
 
+- (IBAction)refresh:(id)sender {
+    [self downloadDataFromRedmine];
+}
+
 @end
