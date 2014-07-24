@@ -7,6 +7,7 @@
 //
 
 #import "TasksTableViewController.h"
+#import "TimeViewController.h"
 
 @interface TasksTableViewController ()
 
@@ -100,7 +101,15 @@
               NSLog(@"%@",error);
               return;
           }
-          self.issues = response[@"issues"];
+          self.projects = [NSMutableDictionary dictionary];
+          for (NSDictionary* issue in response[@"issues"]) {
+              NSMutableArray* arr = [self.projects objectForKey:issue[@"project"][@"name"]];
+              if (arr == nil) {
+                  arr = [NSMutableArray array];
+                  self.projects[issue[@"project"][@"name"]] = arr;
+              }
+              [arr addObject:issue];
+          }
           [self.tableView reloadData];
       }];
 }
@@ -109,12 +118,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [[self.projects allKeys] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.issues.count;
+    NSString* key = [self.projects allKeys][section];
+    return [self.projects[key] count];
 }
 
 
@@ -122,62 +132,31 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
 
-    NSDictionary* issue = self.issues[indexPath.row];
+    NSString* key = [self.projects allKeys][indexPath.section];
+    NSDictionary* issue = self.projects[key][indexPath.row];
 
-    cell.textLabel.text = issue[@"subject"];
+    UILabel* text = (UILabel*)[cell viewWithTag:1];
+    text.text = issue[@"subject"];
     
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [self.projects allKeys][section];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath* indexPath = [self.tableView indexPathForCell:sender];
+    TimeViewController* controller = (TimeViewController*)segue.destinationViewController;
+    NSString* key = [self.projects allKeys][indexPath.section];
+    NSDictionary* issue = self.projects[key][indexPath.row];
+    controller.issue = issue;
 }
-*/
+
 
 - (IBAction)refresh:(id)sender {
     [self downloadDataFromRedmine];

@@ -13,7 +13,7 @@
 @property (nonatomic, strong) NSDictionary* config;
 @property (nonatomic, strong) OSWebRequest* request;
 
-@property (nonatomic,strong) NSArray* issues;
+@property (nonatomic,strong) NSMutableDictionary* projects;
 
 - (IBAction)refresh:(id)sender;
 @end

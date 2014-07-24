@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TimeEntry.h"
 
 @implementation AppDelegate
 
@@ -36,9 +37,51 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
+-(NSString*)timeEntryURL {
+    NSDictionary* config = (NSDictionary*)[OSSystem loadFromConfig:@"RedmineConfig"];
+    return [NSString stringWithFormat:@"%@/time_entries.xml",config[@"ServerURL"]];
+}
+
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    NSDictionary* config = (NSDictionary*)[OSSystem loadFromConfig:@"RedmineConfig"];
+
+
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"TimeEntry" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    // Edit the sort key as appropriate.
+    NSError* error = nil;
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (error != nil) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        [OSDatabase displayValidationError:error];
+    }
+
+
+    for (TimeEntry* entry in fetchedObjects) {
+        OSWebRequest* request = [OSWebRequest webRequest];
+
+        [request post3:@{@"issue_id": [entry.issue_id stringValue],
+                            @"hours": @"0.5",
+                     @"activity_id": @"9"}
+                      toURL:[self timeEntryURL]
+                    headers:@{@"X-Redmine-API-Key": config[@"APIKey"],
+                            @"Accept": @"application/json"}
+              withHandler:^(NSData* responseData, NSHTTPURLResponse* urlResponse, NSError *error){
+
+                  if (error)
+                  {
+                      NSLog(@"%@",error);
+                      return;
+                  }
+              }];
+    }
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

@@ -29,6 +29,8 @@
 		0BFC7E0A1980FB90009B0246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC7E091980FB90009B0246 /* Main.storyboard */; };
 		0BFC7E1019810489009B0246 /* ConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC7E0F19810489009B0246 /* ConfigurationViewController.m */; };
 		0BFC7E1319810FA7009B0246 /* TasksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC7E1219810FA7009B0246 /* TasksTableViewController.m */; };
+		0BFC7E171981376D009B0246 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC7E161981376D009B0246 /* TimeViewController.m */; };
+		0BFC7E1D1981415D009B0246 /* TimeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC7E1C1981415D009B0246 /* TimeEntry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,10 @@
 		0BFC7E0F19810489009B0246 /* ConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationViewController.m; sourceTree = "<group>"; };
 		0BFC7E1119810FA7009B0246 /* TasksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksTableViewController.h; sourceTree = "<group>"; };
 		0BFC7E1219810FA7009B0246 /* TasksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksTableViewController.m; sourceTree = "<group>"; };
+		0BFC7E151981376D009B0246 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
+		0BFC7E161981376D009B0246 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
+		0BFC7E1B1981415D009B0246 /* TimeEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeEntry.h; path = ../TimeEntry.h; sourceTree = "<group>"; };
+		0BFC7E1C1981415D009B0246 /* TimeEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeEntry.m; path = ../TimeEntry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,8 @@
 		0BFC7DC51980F8A4009B0246 /* Dordebble */ = {
 			isa = PBXGroup;
 			children = (
+				0BFC7E1B1981415D009B0246 /* TimeEntry.h */,
+				0BFC7E1C1981415D009B0246 /* TimeEntry.m */,
 				0BFC7DCE1980F8A4009B0246 /* AppDelegate.h */,
 				0BFC7DCF1980F8A4009B0246 /* AppDelegate.m */,
 				0BFC7DD41980F8A4009B0246 /* Images.xcassets */,
@@ -170,6 +178,8 @@
 				0BFC7E0F19810489009B0246 /* ConfigurationViewController.m */,
 				0BFC7E1119810FA7009B0246 /* TasksTableViewController.h */,
 				0BFC7E1219810FA7009B0246 /* TasksTableViewController.m */,
+				0BFC7E151981376D009B0246 /* TimeViewController.h */,
+				0BFC7E161981376D009B0246 /* TimeViewController.m */,
 			);
 			path = Dordebble;
 			sourceTree = "<group>";
@@ -341,9 +351,11 @@
 			files = (
 				0BFC7DD01980F8A4009B0246 /* AppDelegate.m in Sources */,
 				0BFC7E1319810FA7009B0246 /* TasksTableViewController.m in Sources */,
+				0BFC7E1D1981415D009B0246 /* TimeEntry.m in Sources */,
 				0BFC7DCC1980F8A4009B0246 /* main.m in Sources */,
 				0BFC7DD31980F8A4009B0246 /* Dordebble.xcdatamodeld in Sources */,
 				0BFC7E1019810489009B0246 /* ConfigurationViewController.m in Sources */,
+				0BFC7E171981376D009B0246 /* TimeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
