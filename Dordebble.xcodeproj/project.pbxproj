@@ -22,6 +22,10 @@
 		0BFC7DDF1980F8A4009B0246 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFC7DC31980F8A4009B0246 /* CoreData.framework */; };
 		0BFC7DE71980F8A4009B0246 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC7DE51980F8A4009B0246 /* InfoPlist.strings */; };
 		0BFC7DE91980F8A4009B0246 /* DordebbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC7DE81980F8A4009B0246 /* DordebbleTests.m */; };
+		0BFC7DFE1980FA4E009B0246 /* libOSLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFC7DF91980FA39009B0246 /* libOSLibrary.a */; };
+		0BFC7E001980FA5C009B0246 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFC7DFF1980FA5C009B0246 /* SystemConfiguration.framework */; };
+		0BFC7E021980FA63009B0246 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFC7E011980FA63009B0246 /* QuartzCore.framework */; };
+		0BFC7E041980FA6A009B0246 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFC7E031980FA6A009B0246 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +35,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0BFC7DB91980F8A4009B0246;
 			remoteInfo = Dordebble;
+		};
+		0BFC7DF81980FA39009B0246 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0BFC7DF21980FA39009B0246 /* OSLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27CB95F613E4110100717380;
+			remoteInfo = OSLibrary;
+		};
+		0BFC7DFA1980FA39009B0246 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0BFC7DF21980FA39009B0246 /* OSLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27CB960613E4110100717380;
+			remoteInfo = OSLibraryTests;
+		};
+		0BFC7DFC1980FA39009B0246 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0BFC7DF21980FA39009B0246 /* OSLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0B7F12FF17905DF90068B3F8;
+			remoteInfo = OSLibraryBundle;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -53,6 +78,10 @@
 		0BFC7DE41980F8A4009B0246 /* DordebbleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DordebbleTests-Info.plist"; sourceTree = "<group>"; };
 		0BFC7DE61980F8A4009B0246 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0BFC7DE81980F8A4009B0246 /* DordebbleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DordebbleTests.m; sourceTree = "<group>"; };
+		0BFC7DF21980FA39009B0246 /* OSLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OSLibrary.xcodeproj; path = OSLibrary/OSLibrary.xcodeproj; sourceTree = "<group>"; };
+		0BFC7DFF1980FA5C009B0246 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0BFC7E011980FA63009B0246 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0BFC7E031980FA6A009B0246 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +89,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BFC7DC01980F8A4009B0246 /* CoreGraphics.framework in Frameworks */,
 				0BFC7DC41980F8A4009B0246 /* CoreData.framework in Frameworks */,
+				0BFC7E041980FA6A009B0246 /* CoreLocation.framework in Frameworks */,
+				0BFC7E021980FA63009B0246 /* QuartzCore.framework in Frameworks */,
+				0BFC7E001980FA5C009B0246 /* SystemConfiguration.framework in Frameworks */,
+				0BFC7DFE1980FA4E009B0246 /* libOSLibrary.a in Frameworks */,
+				0BFC7DC01980F8A4009B0246 /* CoreGraphics.framework in Frameworks */,
 				0BFC7DC21980F8A4009B0246 /* UIKit.framework in Frameworks */,
 				0BFC7DBE1980F8A4009B0246 /* Foundation.framework in Frameworks */,
 			);
@@ -84,6 +117,7 @@
 		0BFC7DB11980F8A4009B0246 = {
 			isa = PBXGroup;
 			children = (
+				0BFC7DF21980FA39009B0246 /* OSLibrary.xcodeproj */,
 				0BFC7DC51980F8A4009B0246 /* Dordebble */,
 				0BFC7DE21980F8A4009B0246 /* DordebbleTests */,
 				0BFC7DBC1980F8A4009B0246 /* Frameworks */,
@@ -103,6 +137,9 @@
 		0BFC7DBC1980F8A4009B0246 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0BFC7E031980FA6A009B0246 /* CoreLocation.framework */,
+				0BFC7E011980FA63009B0246 /* QuartzCore.framework */,
+				0BFC7DFF1980FA5C009B0246 /* SystemConfiguration.framework */,
 				0BFC7DBD1980F8A4009B0246 /* Foundation.framework */,
 				0BFC7DBF1980F8A4009B0246 /* CoreGraphics.framework */,
 				0BFC7DC11980F8A4009B0246 /* UIKit.framework */,
@@ -151,6 +188,16 @@
 				0BFC7DE51980F8A4009B0246 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0BFC7DF31980FA39009B0246 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0BFC7DF91980FA39009B0246 /* libOSLibrary.a */,
+				0BFC7DFB1980FA39009B0246 /* OSLibraryTests.xctest */,
+				0BFC7DFD1980FA39009B0246 /* OSLibraryBundle.bundle */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +262,12 @@
 			mainGroup = 0BFC7DB11980F8A4009B0246;
 			productRefGroup = 0BFC7DBB1980F8A4009B0246 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0BFC7DF31980FA39009B0246 /* Products */;
+					ProjectRef = 0BFC7DF21980FA39009B0246 /* OSLibrary.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0BFC7DB91980F8A4009B0246 /* Dordebble */,
@@ -222,6 +275,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0BFC7DF91980FA39009B0246 /* libOSLibrary.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOSLibrary.a;
+			remoteRef = 0BFC7DF81980FA39009B0246 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0BFC7DFB1980FA39009B0246 /* OSLibraryTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OSLibraryTests.xctest;
+			remoteRef = 0BFC7DFA1980FA39009B0246 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0BFC7DFD1980FA39009B0246 /* OSLibraryBundle.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OSLibraryBundle.bundle;
+			remoteRef = 0BFC7DFC1980FA39009B0246 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0BFC7DB81980F8A4009B0246 /* Resources */ = {
@@ -449,6 +526,7 @@
 				0BFC7DEE1980F8A4009B0246 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0BFC7DEF1980F8A4009B0246 /* Build configuration list for PBXNativeTarget "DordebbleTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +535,7 @@
 				0BFC7DF11980F8A4009B0246 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

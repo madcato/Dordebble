@@ -1,0 +1,3 @@
+[submodule "OSLibrary"]
+	path = OSLibrary
+	url = git@github.com:madcato/OSLibrary.git
