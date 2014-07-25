@@ -32,6 +32,7 @@
     self.initialTime = [NSDate date];
 
     [self createTimeEntry];
+    [self scheduleNotificationWithItem:@"Pomodoro ended" interval:25];
 }
 
 - (void)tick {
@@ -86,6 +87,7 @@
 - (IBAction)cancelPressed:(id)sender {
     [self finishTimer];
     [self removeTimeEntry];
+    [self cancelNotifications];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -109,6 +111,36 @@
 - (void)removeTimeEntry {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate.managedObjectContext deleteObject:self.managedObject];
+}
+
+
+#pragma mark - notification
+
+- (void)scheduleNotificationWithItem:(NSString *)text interval:(int)minutesAfter {
+
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSDateComponents *dateComps;
+    NSDate* now = [NSDate date];
+    dateComps = [calendar components:NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:now];
+
+    NSDate *itemDate = [calendar dateFromComponents:dateComps];
+
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    if (localNotif == nil)
+        return;
+    localNotif.fireDate = [itemDate dateByAddingTimeInterval:(minutesAfter*60)];
+    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+
+    localNotif.alertBody = text;
+    localNotif.alertAction = NSLocalizedString(@"View Details", nil);
+
+    localNotif.soundName = UILocalNotificationDefaultSoundName;
+
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+}
+
+- (void)cancelNotifications {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 @end

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DC06282D-7A36-46B2-9A3C-407903BD4176</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Dordebble</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3AAD5F0A-BCE9-4619-8979-4853A482A79C</key>
+		<string>ssh://github.com/madcato/OSLibrary.git</string>
+		<key>E64D8A22-115D-4423-BC97-C7CB5FE0980F</key>
+		<string>ssh://github.com/madcato/Dordebble.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Dordebble.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3AAD5F0A-BCE9-4619-8979-4853A482A79C</key>
+		<string>../../OSLibrary</string>
+		<key>E64D8A22-115D-4423-BC97-C7CB5FE0980F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/madcato/Dordebble.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E64D8A22-115D-4423-BC97-C7CB5FE0980F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E64D8A22-115D-4423-BC97-C7CB5FE0980F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Dordebble</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3AAD5F0A-BCE9-4619-8979-4853A482A79C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OSLibrary</string>
+		</dict>
+	</array>
+</dict>
+</plist>

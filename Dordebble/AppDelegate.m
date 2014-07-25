@@ -79,6 +79,8 @@
                       NSLog(@"%@",error);
                       return;
                   }
+                  // Remove time entry from db
+                  [self.managedObjectContext deleteObject:entry];
               }];
     }
 
