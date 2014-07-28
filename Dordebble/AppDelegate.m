@@ -39,7 +39,7 @@
 
 -(NSString*)timeEntryURL {
     NSDictionary* config = (NSDictionary*)[OSSystem loadFromConfig:@"RedmineConfig"];
-    return [NSString stringWithFormat:@"%@/time_entries.xml",config[@"ServerURL"]];
+    return [NSString stringWithFormat:@"%@time_entries.xml",config[@"ServerURL"]];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -64,11 +64,17 @@
 
 
     for (TimeEntry* entry in fetchedObjects) {
+        // Check if the pomodoro is already finished
+        NSTimeInterval interval = [entry.created_at timeIntervalSinceNow];
+        interval = -interval;
+        if ((interval / 60) < 25) {
+            continue;
+        }
         OSWebRequest* request = [OSWebRequest webRequest];
 
-        [request post3:@{@"issue_id": [entry.issue_id stringValue],
-                            @"hours": @"0.5",
-                     @"activity_id": @"9"}
+        [request postJsonObject:@{@"time_entry": @{@"issue_id": [entry.issue_id stringValue],
+                                                   @"hours": @"0.5",
+                                                   @"activity_id": @"9"}}
                       toURL:[self timeEntryURL]
                     headers:@{@"X-Redmine-API-Key": config[@"APIKey"],
                             @"Accept": @"application/json"}
