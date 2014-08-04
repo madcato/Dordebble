@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
 
+    self.config = [OSSystem loadFromConfig:@"RedmineConfig"];
     [self downloadDataFromRedmine];
 }
 
