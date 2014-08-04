@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BAA2EA5198F9D3F0097B18B /* ConfigTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BAA2EA4198F9D3F0097B18B /* ConfigTableViewController.m */; };
+		0BAA2EA9198FA11A0097B18B /* ConfigDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BAA2EA8198FA11A0097B18B /* ConfigDataSource.m */; };
 		0BFC7DBE1980F8A4009B0246 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFC7DBD1980F8A4009B0246 /* Foundation.framework */; };
 		0BFC7DC01980F8A4009B0246 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFC7DBF1980F8A4009B0246 /* CoreGraphics.framework */; };
 		0BFC7DC21980F8A4009B0246 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFC7DC11980F8A4009B0246 /* UIKit.framework */; };
@@ -65,7 +67,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0BFC7DBA1980F8A4009B0246 /* Dordebble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dordebble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BAA2EA3198F9D3F0097B18B /* ConfigTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigTableViewController.h; sourceTree = "<group>"; };
+		0BAA2EA4198F9D3F0097B18B /* ConfigTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigTableViewController.m; sourceTree = "<group>"; };
+		0BAA2EA6198FA0700097B18B /* OSStaticTableDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSStaticTableDataSource.h; sourceTree = "<group>"; };
+		0BAA2EA7198FA11A0097B18B /* ConfigDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigDataSource.h; sourceTree = "<group>"; };
+		0BAA2EA8198FA11A0097B18B /* ConfigDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigDataSource.m; sourceTree = "<group>"; };
+		0BFC7DBA1980F8A4009B0246 /* DordebbleDEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DordebbleDEV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BFC7DBD1980F8A4009B0246 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0BFC7DBF1980F8A4009B0246 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0BFC7DC11980F8A4009B0246 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -142,7 +149,7 @@
 		0BFC7DBB1980F8A4009B0246 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0BFC7DBA1980F8A4009B0246 /* Dordebble.app */,
+				0BFC7DBA1980F8A4009B0246 /* DordebbleDEV.app */,
 				0BFC7DDA1980F8A4009B0246 /* DordebbleTests.xctest */,
 			);
 			name = Products;
@@ -180,6 +187,11 @@
 				0BFC7E1219810FA7009B0246 /* TasksTableViewController.m */,
 				0BFC7E151981376D009B0246 /* TimeViewController.h */,
 				0BFC7E161981376D009B0246 /* TimeViewController.m */,
+				0BAA2EA3198F9D3F0097B18B /* ConfigTableViewController.h */,
+				0BAA2EA4198F9D3F0097B18B /* ConfigTableViewController.m */,
+				0BAA2EA6198FA0700097B18B /* OSStaticTableDataSource.h */,
+				0BAA2EA7198FA11A0097B18B /* ConfigDataSource.h */,
+				0BAA2EA8198FA11A0097B18B /* ConfigDataSource.m */,
 			);
 			path = Dordebble;
 			sourceTree = "<group>";
@@ -240,7 +252,7 @@
 			);
 			name = Dordebble;
 			productName = Dordebble;
-			productReference = 0BFC7DBA1980F8A4009B0246 /* Dordebble.app */;
+			productReference = 0BFC7DBA1980F8A4009B0246 /* DordebbleDEV.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0BFC7DD91980F8A4009B0246 /* DordebbleTests */ = {
@@ -355,6 +367,8 @@
 				0BFC7DD01980F8A4009B0246 /* AppDelegate.m in Sources */,
 				0BFC7E1319810FA7009B0246 /* TasksTableViewController.m in Sources */,
 				0BFC7E1D1981415D009B0246 /* TimeEntry.m in Sources */,
+				0BAA2EA9198FA11A0097B18B /* ConfigDataSource.m in Sources */,
+				0BAA2EA5198F9D3F0097B18B /* ConfigTableViewController.m in Sources */,
 				0BFC7DCC1980F8A4009B0246 /* main.m in Sources */,
 				0BFC7DD31980F8A4009B0246 /* Dordebble.xcdatamodeld in Sources */,
 				0BFC7E1019810489009B0246 /* ConfigurationViewController.m in Sources */,
